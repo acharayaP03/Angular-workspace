@@ -11,4 +11,10 @@
     </li>
     }
   </ul>
+
+  @if(getSelectedUser){
+  <app-tasks [userId]="selectedUserId" [selectedUser]="getSelectedUser" />
+  } @else {
+  <p>Select user to view or assign new task.</p>
+  }
 </main>
