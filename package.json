@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "easytask": "ng serve 'easytask'",
+    "statusmanagement": "ng serve 'statusmanagement",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
