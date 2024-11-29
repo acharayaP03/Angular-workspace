@@ -1,1 +1,14 @@
 <app-header />
+<main class="main">
+  <ul id="users">
+    @for (user of users; track user.id){
+    <li>
+      <app-user
+        [user]="user"
+        (select)="selectUser(user.id)"
+        [selectedUser]="user.id === selectedUserId"
+      />
+    </li>
+    }
+  </ul>
+</main>
