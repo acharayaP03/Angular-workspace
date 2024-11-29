@@ -1,0 +1,19 @@
+<header>
+  <div id="logo">
+    <img src="logo.png" alt="Website logo, a server" />
+  </div>
+
+  <nav>
+    <ul>
+        @for(links of navigationLinks; track links.name){
+            <li><a [href]="links.href">{{ links.name}}</a></li>
+        }
+      <li>
+        <button>
+          <span> Logout </span>
+          <span class="icon"> → </span>
+        </button>
+      </li>
+    </ul>
+  </nav>
+</header>
