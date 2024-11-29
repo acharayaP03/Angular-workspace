@@ -5,4 +5,21 @@
       <button>Create new task</button>
     </menu>
   </header>
+
+  <ul>
+    @for(task of tasks; track task.id){
+    <li>
+      <article>
+        <div>
+          <h4>{{ task.title }}</h4>
+          <time>{{ task.dueDate }}</time>
+        </div>
+        <p class="summary">{{ task.summary }}</p>
+        <p class="actions">
+          <button>Mark as complete</button>
+        </p>
+      </article>
+    </li>
+    }
+  </ul>
 </section>
