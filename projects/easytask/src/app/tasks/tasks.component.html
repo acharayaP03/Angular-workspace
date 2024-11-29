@@ -1,18 +1,18 @@
 <section id="tasks">
   <header>
-    <h3>Task name</h3>
+    <h3>{{ selectedUser?.name }}</h3>
     <menu>
       <button>Create new task</button>
     </menu>
   </header>
 
   <ul>
-    @for(task of tasks; track task.id){
+    @for(task of selectedUserTask; track task.id){
     <li>
       <article>
         <div>
           <h4>{{ task.title }}</h4>
-          <time>{{ task.dueDate }}</time>
+          <time>{{ task.dueDate | date : "fullDate" }}</time>
         </div>
         <p class="summary">{{ task.summary }}</p>
         <p class="actions">
