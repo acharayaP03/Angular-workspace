@@ -5,13 +5,15 @@
 
   <nav>
     <ul>
-        @for(links of navigationLinks; track links.name){
-            <li><a [href]="links.href">{{ links.name}}</a></li>
-        }
+      @for(links of navigationLinks; track links.name){
       <li>
-        <button>
-          <span> Logout </span>
-          <span class="icon"> → </span>
+        <a [href]="links.href">{{ links.name }}</a>
+      </li>
+      }
+      <li>
+        <button appButton>
+          Logout
+          <span class="icon">→</span>
         </button>
       </li>
     </ul>
