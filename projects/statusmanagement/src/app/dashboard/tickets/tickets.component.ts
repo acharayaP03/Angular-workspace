@@ -1,12 +1,12 @@
-import { Component } from '@angular/core';
-import { NewTicketComponent } from "./new-ticket/new-ticket.component";
+import { Component, ViewEncapsulation } from '@angular/core';
+import { ControlComponent } from '../../sharedUi/control/control.component';
+import { ButtonComponent } from '../../sharedUi/button/button.component';
 
 @Component({
   selector: 'app-tickets',
-  imports: [NewTicketComponent],
+  imports: [ControlComponent, ButtonComponent],
   templateUrl: './tickets.component.html',
-  styleUrl: './tickets.component.css'
+  styleUrl: './tickets.component.css',
+  encapsulation: ViewEncapsulation.None,
 })
-export class TicketsComponent {
-
-}
+export class TicketsComponent {}

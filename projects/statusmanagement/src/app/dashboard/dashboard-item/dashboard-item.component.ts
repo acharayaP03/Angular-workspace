@@ -1,7 +1,7 @@
 import { Component, input, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-dashboard-item',
+  selector: 'div[appDiv]',
   imports: [],
   templateUrl: './dashboard-item.component.html',
   styleUrl: './dashboard-item.component.css',
