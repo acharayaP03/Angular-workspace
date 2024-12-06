@@ -9,4 +9,6 @@ import { ButtonComponent } from '../../sharedUi/button/button.component';
   styleUrl: './tickets.component.css',
   encapsulation: ViewEncapsulation.None,
 })
-export class TicketsComponent {}
+export class TicketsComponent {
+  
+}

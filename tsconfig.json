@@ -4,9 +4,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "paths": {
-      "componentdesignsystem": [
-        "./dist/componentdesignsystem"
-      ]
+      "componentdesignsystem": ["./dist/componentdesignsystem"]
     },
     "outDir": "./dist/out-tsc",
     "strict": true,
@@ -21,7 +19,8 @@
     "moduleResolution": "bundler",
     "importHelpers": true,
     "target": "ES2022",
-    "module": "ES2022"
+    "module": "ES2022",
+    "types": ["node"]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

@@ -1,4 +1,10 @@
-import { Component } from '@angular/core';
+import {
+  Component,
+  DestroyRef,
+  inject,
+  OnDestroy,
+  OnInit,
+} from '@angular/core';
 
 enum Status {
   ONLINE = 'online',
@@ -14,10 +20,16 @@ type ServerStatus = Status.ONLINE | Status.OFFLINE | Status.UNKNOWN;
   templateUrl: './server-status.component.html',
   styleUrl: './server-status.component.css',
 })
-export class ServerStatusComponent {
+export class ServerStatusComponent implements OnInit /*, OnDestroy*/ {
   currentStatus: ServerStatus = Status.ONLINE;
-  constructor() {
-    setInterval(() => {
+
+  private interval?: ReturnType<typeof setInterval>;
+  private detroyRef = inject(DestroyRef);
+
+  constructor() {}
+
+  ngOnInit() {
+    this.interval = setInterval(() => {
       const randomeNumber = Math.random();
 
       if (randomeNumber < 0.5) {
@@ -28,5 +40,18 @@ export class ServerStatusComponent {
         this.currentStatus = Status.UNKNOWN;
       }
     }, 5000);
+
+    this.detroyRef.onDestroy(() => {
+      clearInterval(this.interval);
+    });
   }
+
+  ngAfterViewInit() {
+    console.log('View initialized');
+  }
+
+  // or alternative for this is to call @destroyRef like in ngOnInit
+  // ngOnDestroy(): void {
+  //   clearInterval(this.interval);
+  // }
 }
